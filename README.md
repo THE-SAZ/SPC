@@ -21,16 +21,6 @@
 
 ---
 
-## 🆕 چه چیزی در v0.6.0؟
-
-### 🐛 رفع ۱۵ باگ مهم
-- **Race condition در workflow** — ادغام job‌ها و ترتیب صحیح
-- **دسترسی نداشتن به داده‌ها در Pages** — مسیر `docs/data`
-- **QRCode race** — retry + fallback
-- **favKey غیرپایدار** — SHA-1 hash
-- **Pyrogram با credentials خالی** — گارد + پیام واضح
-- و ۱۰ باگ دیگر در جدول [`CHANGELOG`](#-changelog)
-
 ### ✨ ویژگی‌های جدید
 - 🎨 **لوگوی سه‌بعدی جدید** — با radialGradient، shadow و highlight دقیق
 - 💎 **داشبورد بالغ** — Design Tokens، typography scale، micro-interactions
