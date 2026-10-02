@@ -1,0 +1,17 @@
+{
+  "name": "SPC — SAZ Proxy Collector",
+  "short_name": "SPC",
+  "description": "۵۰ کانفیگ و ۳۰ پروکسی برتر ۲۴ ساعت از تلگرام",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07070d",
+  "theme_color": "#ff4d6d",
+  "orientation": "portrait",
+  "icons": [
+    {"src": "logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ],
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": ["utilities", "network", "productivity"]
+}
