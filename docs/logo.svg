@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+<defs>
+  <!-- پس‌زمینهٔ نورانی -->
+  <radialGradient id="bgGlow" cx="50%" cy="45%" r="60%">
+    <stop offset="0%" stop-color="#ff4d6d" stop-opacity=".35"/>
+    <stop offset="55%" stop-color="#7c3aed" stop-opacity=".12"/>
+    <stop offset="100%" stop-color="#07070d" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- گلبرگ‌های اصلی — سه‌بعدی با radialGradient -->
+  <radialGradient id="petalMain" cx="35%" cy="30%" r="75%">
+    <stop offset="0%"   stop-color="#ffe0e6"/>
+    <stop offset="18%"  stop-color="#ff8fa3"/>
+    <stop offset="55%"  stop-color="#e11d48"/>
+    <stop offset="85%"  stop-color="#9f1239"/>
+    <stop offset="100%" stop-color="#4c0519"/>
+  </radialGradient>
+
+  <radialGradient id="petalSide" cx="40%" cy="35%" r="80%">
+    <stop offset="0%"   stop-color="#c084fc"/>
+    <stop offset="40%"  stop-color="#a21caf"/>
+    <stop offset="80%"  stop-color="#6d28d9"/>
+    <stop offset="100%" stop-color="#3b0764"/>
+  </radialGradient>
+
+  <radialGradient id="petalBack" cx="50%" cy="40%" r="70%">
+    <stop offset="0%"   stop-color="#f472b6"/>
+    <stop offset="60%"  stop-color="#be185d"/>
+    <stop offset="100%" stop-color="#500724"/>
+  </radialGradient>
+
+  <!-- ساقه -->
+  <linearGradient id="stem" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%"  stop-color="#86efac"/>
+    <stop offset="45%" stop-color="#22c55e"/>
+    <stop offset="100%" stop-color="#14532d"/>
+  </linearGradient>
+
+  <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#4ade80"/>
+    <stop offset="100%" stop-color="#166534"/>
+  </linearGradient>
+
+  <!-- شهد -->
+  <radialGradient id="nectar" cx="35%" cy="30%" r="70%">
+    <stop offset="0%"   stop-color="#fffbeb"/>
+    <stop offset="30%"  stop-color="#fde68a"/>
+    <stop offset="70%"  stop-color="#f59e0b"/>
+    <stop offset="100%" stop-color="#b45309"/>
+  </radialGradient>
+
+  <!-- فیلترها -->
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+    <feOffset dx="0" dy="3" result="off"/>
+    <feComponentTransfer><feFuncA type="linear" slope=".55"/></feComponentTransfer>
+    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="2.4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+
+  <filter id="soft">
+    <feGaussianBlur stdDeviation="1.2"/>
+  </filter>
+
+  <!-- هایلایت -->
+  <linearGradient id="hl" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".9"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<!-- هاله پشت -->
+<circle cx="80" cy="76" r="72" fill="url(#bgGlow)"/>
+
+<!-- سایهٔ زیر گل -->
+<ellipse cx="80" cy="132" rx="26" ry="4" fill="#000" opacity=".35" filter="url(#soft)"/>
+
+<!-- ساقه (خمیده و پژمرده) -->
+<path d="M80 78 Q78 98 74 116 Q71 126 66 134"
+      stroke="url(#stem)" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+<!-- هایلایت ساقه -->
+<path d="M79.4 80 Q77.6 100 74 116"
+      stroke="#bbf7d0" stroke-width="1" fill="none" opacity=".55" stroke-linecap="round"/>
+
+<!-- برگ‌های پژمرده -->
+<path d="M75 108 Q58 100 48 114 Q56 120 68 116 Z" fill="url(#leaf)" opacity=".9"/>
+<path d="M76 96 Q92 88 102 100 Q94 106 82 102 Z" fill="url(#leaf)" opacity=".8"/>
+
+<!-- گلبرگ‌های پشتی (عمق) -->
+<g filter="url(#shadow)">
+  <path d="M80 78 Q60 46 48 62 Q44 76 60 80 Q70 80 80 78 Z"
+        fill="url(#petalBack)" opacity=".95"/>
+  <path d="M80 78 Q100 46 112 62 Q116 76 100 80 Q90 80 80 78 Z"
+        fill="url(#petalBack)" opacity=".95"/>
+</g>
+
+<!-- گلبرگ‌های میانی (پژمردگی به سمت پایین) -->
+<g filter="url(#shadow)">
+  <path d="M80 78 Q54 58 46 74 Q42 88 58 90 Q70 88 80 78 Z"
+        fill="url(#petalSide)" opacity=".95"/>
+  <path d="M80 78 Q106 58 114 74 Q118 88 102 90 Q90 88 80 78 Z"
+        fill="url(#petalSide)" opacity=".95"/>
+</g>
+
+<!-- گلبرگ‌های جلو (قلب لاله) -->
+<g filter="url(#shadow)">
+  <path d="M80 78 Q60 40 72 30 Q82 26 84 44 Q84 64 80 78 Z"
+        fill="url(#petalMain)"/>
+  <path d="M80 78 Q100 40 88 30 Q78 26 76 44 Q76 64 80 78 Z"
+        fill="url(#petalMain)" opacity=".95"/>
+</g>
+
+<!-- هایلایت گلبرگ‌ها -->
+<path d="M72 40 Q76 56 78 70" stroke="url(#hl)" stroke-width="1.6"
+      fill="none" opacity=".55" stroke-linecap="round"/>
+<path d="M88 40 Q84 56 82 70" stroke="url(#hl)" stroke-width="1.4"
+      fill="none" opacity=".45" stroke-linecap="round"/>
+
+<!-- قطرهٔ شهد (نماد داده) -->
+<g filter="url(#glow)">
+  <ellipse cx="80" cy="86" rx="5.2" ry="6.4" fill="url(#nectar)"/>
+  <ellipse cx="78.4" cy="84" rx="1.8" ry="2.2" fill="#ffffff" opacity=".85"/>
+</g>
+
+<!-- ذرات نور (نماد سیگنال) -->
+<g opacity=".9">
+  <circle cx="46" cy="48" r="1.4" fill="#ff4d6d"/>
+  <circle cx="118" cy="50" r="1.2" fill="#a78bfa"/>
+  <circle cx="80" cy="18" r="1.5" fill="#22d3ee" filter="url(#glow)"/>
+  <circle cx="128" cy="96" r="1" fill="#fbbf24" opacity=".7"/>
+  <circle cx="34" cy="94" r="1" fill="#f472b6" opacity=".7"/>
+</g>
+
+<!-- خطوط اتصال (نماد شبکه) -->
+<g stroke="#7c3aed" stroke-width=".7" opacity=".4" fill="none">
+  <path d="M80 24 Q92 34 106 32"/>
+  <path d="M80 24 Q68 34 54 32"/>
+</g>
+</svg>
